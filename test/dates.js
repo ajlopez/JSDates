@@ -59,3 +59,10 @@ exports['create now'] = function (test) {
         test.equal(date.getMinutes(), 0)
     }
 };
+
+exports['now to date'] = function (test) {
+    var now = jsdates.now().toDate();
+    var date = new Date();
+    
+    test.ok(Math.abs(now.getTime() - date.getTime()) <= 1000);
+};
