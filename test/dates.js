@@ -132,4 +132,16 @@ exports['add months'] = function (test) {
     test.equal(date.seconds(), 0);
 };
 
+exports['create datetime'] = function (test) {
+    var date = jsdates.datetime(2016, 1, 12, 23, 50, 45);
+    var ndate = new Date(2016, 0, 12, 23, 50, 45);
+    
+    test.equal(date.year(), ndate.getFullYear());
+    test.equal(date.month(), ndate.getMonth() + 1);
+    test.equal(date.day(), ndate.getDate());
+    
+    test.equal(date.hours(), ndate.getHours());
+    test.equal(date.minutes(), ndate.getMinutes());
+    test.equal(date.seconds(), ndate.getSeconds());
+};
 
