@@ -66,3 +66,16 @@ exports['now to date'] = function (test) {
     
     test.ok(Math.abs(now.getTime() - date.getTime()) <= 1000);
 };
+
+exports['create date'] = function (test) {
+    var date = jsdates.date(2016, 1, 12);
+    var ndate = new Date(2016, 0, 12);
+    
+    test.equal(date.year(), ndate.getFullYear());
+    test.equal(date.month(), ndate.getMonth() + 1);
+    test.equal(date.day(), ndate.getDate());
+    
+    test.equal(date.hours(), 0);
+    test.equal(date.minutes(), 0);
+    test.equal(date.seconds(), 0);
+};
