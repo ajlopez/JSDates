@@ -79,3 +79,31 @@ exports['create date'] = function (test) {
     test.equal(date.minutes(), 0);
     test.equal(date.seconds(), 0);
 };
+
+exports['add day'] = function (test) {
+    var date = jsdates.date(2016, 1, 12).addDays(1);
+    var ndate = new Date(2016, 0, 13);
+    
+    test.equal(date.year(), ndate.getFullYear());
+    test.equal(date.month(), ndate.getMonth() + 1);
+    test.equal(date.day(), ndate.getDate());
+    
+    test.equal(date.hours(), 0);
+    test.equal(date.minutes(), 0);
+    test.equal(date.seconds(), 0);
+};
+
+exports['add days'] = function (test) {
+    var date = jsdates.date(2016, 1, 12).addDays(2);
+    var ndate = new Date(2016, 0, 14);
+    
+    test.equal(date.year(), ndate.getFullYear());
+    test.equal(date.month(), ndate.getMonth() + 1);
+    test.equal(date.day(), ndate.getDate());
+    
+    test.equal(date.hours(), 0);
+    test.equal(date.minutes(), 0);
+    test.equal(date.seconds(), 0);
+};
+
+
