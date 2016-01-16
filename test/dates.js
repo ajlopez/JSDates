@@ -45,7 +45,17 @@ exports['create now'] = function (test) {
     test.equal(now.year(), date.getFullYear());
     test.equal(now.month(), date.getMonth() + 1);
     test.equal(now.day(), date.getDate());
-    test.equal(now.hours(), date.getHours());
-    test.equal(now.minutes(), date.getMinutes());
-    test.equal(now.seconds(), date.getSeconds());
+    if (now.hours() === date.getHours())
+        if (now.minutes() === date.getMinutes())
+            test.ok(now.seconds() === date.getSeconds() || now.seconds() + 1 === date.getSeconds())
+        else {
+            test.ok(now.minutes() + 1 === date.getMinutes());
+            test.equal(now.seconds(), 59);
+            test.equal(date.getSeconds(), 0);
+        }
+    else {
+        test.equal(now.hours() + 1, date.getHours());
+        test.equal(now.minutes(), 59);
+        test.equal(date.getMinutes(), 0)
+    }
 };
