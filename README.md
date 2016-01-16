@@ -41,6 +41,10 @@ MIT
 
 TBD
 
+## Versions
+
+- 0.0.1, published
+
 ## Contribution
 
 Feel free to [file issues](https://github.com/ajlopez/JSDates) and submit
