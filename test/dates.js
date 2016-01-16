@@ -106,4 +106,30 @@ exports['add days'] = function (test) {
     test.equal(date.seconds(), 0);
 };
 
+exports['add month'] = function (test) {
+    var date = jsdates.date(2016, 1, 12).addMonths(1);
+    var ndate = new Date(2016, 1, 12);
+    
+    test.equal(date.year(), ndate.getFullYear());
+    test.equal(date.month(), ndate.getMonth() + 1);
+    test.equal(date.day(), ndate.getDate());
+    
+    test.equal(date.hours(), 0);
+    test.equal(date.minutes(), 0);
+    test.equal(date.seconds(), 0);
+};
+
+exports['add months'] = function (test) {
+    var date = jsdates.date(2016, 1, 12).addMonths(2);
+    var ndate = new Date(2016, 2, 12);
+    
+    test.equal(date.year(), ndate.getFullYear());
+    test.equal(date.month(), ndate.getMonth() + 1);
+    test.equal(date.day(), ndate.getDate());
+    
+    test.equal(date.hours(), 0);
+    test.equal(date.minutes(), 0);
+    test.equal(date.seconds(), 0);
+};
+
 
