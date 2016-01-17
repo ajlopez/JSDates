@@ -145,3 +145,23 @@ exports['create datetime'] = function (test) {
     test.equal(date.seconds(), ndate.getSeconds());
 };
 
+exports['use and create now'] = function (test) {
+    var date = new Date();
+    
+    jsdates.set('now', date);
+    
+    var now = jsdates.now();
+    
+    test.ok(now);
+    test.equal(typeof now, 'object');
+    
+    var date = new Date();
+    
+    test.equal(now.year(), date.getFullYear());
+    test.equal(now.month(), date.getMonth() + 1);
+    test.equal(now.day(), date.getDate());
+    test.equal(now.hours(), date.getHours());
+    test.equal(now.minutes(), date.getMinutes());
+    test.equal(now.seconds(), date.getSeconds());
+};
+
